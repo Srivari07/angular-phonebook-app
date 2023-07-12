@@ -49,15 +49,11 @@ export class ContactListComponent implements OnInit {
 
     // console.log(eventData)
   }
-  deleteContact(eventData:number){
-    for (let index = 0; index < this.contacts.length; index++) {
-      if (this.contacts[index].id===eventData){
-        this.contacts.splice(index,1)
-        this.filteredContacts=this.contacts
-        console.log("Deleted contact for: ",eventData)
-        break
-      }
-      
-    }
+  deleteContact(eventData:Contact){
+    let id=eventData.id
+    this._contactService.deleteContactById(id)
+    console.log("Contact after delete: ", this.contacts)
+
+    this.filteredContacts=this._contactService.getAllContacts()
   }
 }

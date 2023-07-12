@@ -31,3 +31,6 @@ import { ContactDeleteComponent } from './components/contact-delete/contact-dele
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+// json-server --port 4300 --watch db/data.json 

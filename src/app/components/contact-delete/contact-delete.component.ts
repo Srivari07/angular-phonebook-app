@@ -14,10 +14,10 @@ export class ContactDeleteComponent {
   contact?:Contact
 
   @Output()
-  onDeleteContactById:EventEmitter<number>=new EventEmitter<number>();
+  onDeleteContact:EventEmitter<Contact>=new EventEmitter<Contact>();
 
-  setContactId(id:number){
-    this.onDeleteContactById.emit(id)
+  deleteContact(contact:Contact){
+    this.onDeleteContact.emit(contact)
   }
 
 }
