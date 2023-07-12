@@ -9,6 +9,7 @@ import { AddContactComponent } from './components/add-contact/add-contact.compon
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditContactComponent } from './components/edit-contact/edit-contact.component';
 import { ContactCounterComponent } from './components/contact-counter/contact-counter.component';
+import { ContactDeleteComponent } from './components/contact-delete/contact-delete.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ContactCounterComponent } from './components/contact-counter/contact-co
     InitialsPipe,
     AddContactComponent,
     EditContactComponent,
-    ContactCounterComponent
+    ContactCounterComponent,
+    ContactDeleteComponent
   ],
   imports: [
     BrowserModule,

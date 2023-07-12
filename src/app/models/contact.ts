@@ -1,5 +1,5 @@
 export class Contact {
-    id?:number=0;
+    id:number=0;
     firstname?:string=""
     lastname?:string=""
     gender:string=""

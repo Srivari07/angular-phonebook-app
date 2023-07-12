@@ -1,4 +1,4 @@
-<h3>List of all contact</h3>
+<h3>List of all contact {{filteredContacts}}</h3>
 <contact-counter (onRadioChange)="filterContacts($event)" [all]= getAllContactsCount() [male]= getMaleContactsCount() [female]=getFemaleContactsCount()></contact-counter>
 <div class="list-group">
     <div *ngFor="let c of filteredContacts" class="list-group-item">
@@ -12,7 +12,8 @@
                 <p>{{c.phone}}</p>
                 <p>Gender: {{c.gender}}</p>
                     <button class="btn btn-success">Edit</button>
-                    <button class="btn btn-danger">Delete</button>
+                    <button class="btn btn-danger" (click)="deleteContact(c.id)">Delete</button>
+                    <!-- <contact-delete (onDeleteContactById)="deleteContact(c.id)"></contact-delete> -->
             </div>
     </div>
 </div>
