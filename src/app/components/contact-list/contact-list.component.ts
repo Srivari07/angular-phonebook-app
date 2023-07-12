@@ -7,7 +7,9 @@ import { Contact } from 'src/app/models/contact';
   styleUrls: ['./contact-list.component.css']
 })
 export class ContactListComponent implements OnInit {
-  contacts?:Contact[]=[]
+  contacts:Contact[]=[]
+  noOfContacts?:number
+  filteredContacts:Contact[]=[]
 
   ngOnInit(): void {
     this.contacts?.push(new Contact(1,"Srivari","Chettiyar","Male","07-Sept-2001","srivari@gmail.com","9870290210","Mumbai","Maharashtra","India","./assets/images/sri.jpg"))
@@ -16,5 +18,25 @@ export class ContactListComponent implements OnInit {
     this.contacts?.push(new Contact(4,"Aakanksha","Bhatt","Female","21-Sept-2001","ab@gmail.com","7870290210","Mumbai","UK","India","./assets/images/3.jpg"))
     this.contacts?.push(new Contact(5,"Minoti","Deshmukh","Female","30-Feb-2001","md@gmail.com","5640290210","Mumbai","Maharashtra","India","./assets/images/4.jpg"))
 
+    this.noOfContacts=this.contacts?.length
+    this.filteredContacts=[...this.contacts]
+
+
+  }
+  getAllContactsCount():number{
+    return this.contacts?.length;
+  }
+
+  getMaleContactsCount():number{
+    return this.contacts.filter(e=>e.gender==="Male").length
+  }
+
+  getFemaleContactsCount():number{
+    return this.contacts.filter(e=>e.gender==="Female").length
+  }
+
+  filterContacts(eventData:string){
+    // this.filteredContacts=this.contacts.filter(c=>c.gender===gender)
+    console.log(eventData)
   }
 }

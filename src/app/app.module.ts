@@ -8,6 +8,7 @@ import { InitialsPipe } from './pipes/initials.pipe';
 import { AddContactComponent } from './components/add-contact/add-contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditContactComponent } from './components/edit-contact/edit-contact.component';
+import { ContactCounterComponent } from './components/contact-counter/contact-counter.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EditContactComponent } from './components/edit-contact/edit-contact.com
     ContactListComponent,
     InitialsPipe,
     AddContactComponent,
-    EditContactComponent
+    EditContactComponent,
+    ContactCounterComponent
   ],
   imports: [
     BrowserModule,

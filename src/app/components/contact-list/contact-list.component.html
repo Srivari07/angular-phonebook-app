@@ -1,6 +1,7 @@
 <h3>List of all contact</h3>
+<contact-counter (onRadioChange)="filterContacts($event)" [all]= getAllContactsCount() [male]= getMaleContactsCount() [female]=getFemaleContactsCount()></contact-counter>
 <div class="list-group">
-    <div *ngFor="let c of contacts" class="list-group-item">
+    <div *ngFor="let c of filteredContacts" class="list-group-item">
         <div class="row">
             <div class="col-sm-4">
                 <img src="{{c.picture}}" width="100px" height="150px" style="border-radius:5px;"/>
@@ -8,7 +9,8 @@
             <div class="col-sm-8">
                 <h4>{{c.gender | initials}} {{c.firstname}} {{c.lastname}}</h4>
                 <p>{{c.city}} {{c.state}} </p>
-                <p>{{c.phone}}
+                <p>{{c.phone}}</p>
+                <p>Gender: {{c.gender}}</p>
                     <button class="btn btn-success">Edit</button>
                     <button class="btn btn-danger">Delete</button>
             </div>
