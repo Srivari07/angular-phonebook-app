@@ -18,7 +18,7 @@ export class ContactCounterComponent {
   @Output()
   onRadioChange:EventEmitter<string>=new EventEmitter<string>();
 
-  setGenderData(){
-    this.onRadioChange.emit("Male")
+  setGenderData(gender:string){
+    this.onRadioChange.emit(gender)
   }
 }

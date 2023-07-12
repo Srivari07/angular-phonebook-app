@@ -36,7 +36,13 @@ export class ContactListComponent implements OnInit {
   }
 
   filterContacts(eventData:string){
-    // this.filteredContacts=this.contacts.filter(c=>c.gender===gender)
-    console.log(eventData)
+    if(eventData!=='All'){
+      this.filteredContacts=this.contacts.filter(c=>c.gender===eventData)
+    }
+    else{
+      this.filteredContacts=this.contacts
+    }
+
+    // console.log(eventData)
   }
 }
