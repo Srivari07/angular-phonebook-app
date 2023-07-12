@@ -1,4 +1,4 @@
-<h3>List of all contact {{filteredContacts}}</h3>
+<h3>List of all contact {{filteredContacts.length}}</h3>
 <contact-counter (onRadioChange)="filterContacts($event)" [all]= getAllContactsCount() [male]= getMaleContactsCount() [female]=getFemaleContactsCount()></contact-counter>
 <div class="list-group">
     <div *ngFor="let c of filteredContacts" class="list-group-item">
