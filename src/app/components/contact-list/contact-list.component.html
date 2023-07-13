@@ -7,7 +7,7 @@
                 <img src="{{c.picture}}" width="100px" height="150px" style="border-radius:5px;"/>
             </div>
             <div class="col-sm-8">
-                <h4>{{c.gender | initials}} {{c.firstname}} {{c.lastname}}</h4>
+                <h4 [routerLink]="['/contact-by-id',c.id]">{{c.gender | initials}} {{c.firstname}} {{c.lastname}}</h4>
                 <p>{{c.city}} {{c.state}} </p>
                 <p>{{c.phone}}</p>
                 <p>Gender: {{c.gender}}</p>

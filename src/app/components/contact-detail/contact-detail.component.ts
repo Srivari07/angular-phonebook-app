@@ -1,14 +1,15 @@
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Component,EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Contact } from 'src/app/models/contact';
 import { ContactService } from 'src/app/services/contact-service.service';
 
 @Component({
-  selector: 'contact-delete',
-  templateUrl: './contact-delete.component.html',
-  styleUrls: ['./contact-delete.component.css']
+  selector: 'app-contact-detail',
+  templateUrl: './contact-detail.component.html',
+  styleUrls: ['./contact-detail.component.css']
 })
-export class ContactDeleteComponent implements OnInit {
+export class ContactDetailComponent {
   @Input()
   id?:number
 
@@ -22,7 +23,7 @@ export class ContactDeleteComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.contactService.getContactById(9).subscribe(data=>this.contact?.id)
+    this.contactService.getContactById(2).subscribe(data=>this.contact?.id)
   }
   deleteContact(contact:Contact){
     this.onDeleteContact.emit(contact)

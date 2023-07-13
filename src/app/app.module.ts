@@ -13,6 +13,8 @@ import { ContactDeleteComponent } from './components/contact-delete/contact-dele
 
 import {HttpClientModule} from "@angular/common/http"
 import { RouterModule, Routes } from '@angular/router';
+import { ContactByIdComponent } from './components/contact-by-id/contact-by-id.component';
+import { ContactDetailComponent } from './components/contact-detail/contact-detail.component';
 
 
 const routes:Routes=[
@@ -25,12 +27,20 @@ const routes:Routes=[
     component:ContactListComponent
   },
   {
+    path:'contact-detail',
+    component:ContactDetailComponent
+  },
+  {
     path:'add-contact',
     component:AddContactComponent
   },
   {
-    path:'edit-contact',
+    path:'edit-contact/:id',
     component:EditContactComponent
+  },
+  {
+    path:'contact-by-id/:id',
+    component:ContactByIdComponent
   },
   {
     path:'',
@@ -48,7 +58,9 @@ const routes:Routes=[
     AddContactComponent,
     EditContactComponent,
     ContactCounterComponent,
-    ContactDeleteComponent
+    ContactDeleteComponent,
+    ContactByIdComponent,
+    ContactDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -25,7 +25,9 @@ export class ContactService implements OnInit{
   }
 
   getContactById(id:number):Observable<Contact>{ 
-    return this.http.get<Contact>(this.baseUrl+id)
+    // return this.http.get<Contact>(this.baseUrl+id)
+    return this.http.get<Contact>(this.baseUrl+"/"+id)
+
   }
 
   deleteContactById(id:number):Observable<any>{
