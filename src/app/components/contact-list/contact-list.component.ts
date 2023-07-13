@@ -9,8 +9,8 @@ import { ContactService } from 'src/app/services/contact-service.service';
 })
 export class ContactListComponent implements OnInit {
   contacts:Contact[]=[]
-  noOfContacts?:number
-  filteredContacts:Contact[]=[]
+  // noOfContacts?:number
+  // filteredContacts:Contact[]=[]
 
   constructor(private _contactService:ContactService){
   }
@@ -21,9 +21,9 @@ export class ContactListComponent implements OnInit {
     // this.contacts?.push(new Contact(4,"Aakanksha","Bhatt","Female","21-Sept-2001","ab@gmail.com","7870290210","Mumbai","UK","India","./assets/images/3.jpg"))
     // this.contacts?.push(new Contact(5,"Minoti","Deshmukh","Female","30-Feb-2001","md@gmail.com","5640290210","Mumbai","Maharashtra","India","./assets/images/4.jpg"))
 
-    this.contacts=this._contactService.getAllContacts()
-    this.noOfContacts=this.contacts?.length
-    this.filteredContacts=[...this.contacts]
+    this._contactService.getAllContacts().subscribe(data=>this.contacts=data)
+    // this.noOfContacts=this.contacts?.length
+    // this.filteredContacts=[...this.contacts]
 
 
   }
@@ -41,19 +41,22 @@ export class ContactListComponent implements OnInit {
 
   filterContacts(eventData:string){
     if(eventData!=='All'){
-      this.filteredContacts=this.contacts.filter(c=>c.gender===eventData)
+      this.contacts=this.contacts.filter(c=>c.gender===eventData)
     }
     else{
-      this.filteredContacts=this.contacts
+      this.contacts=this.contacts
     }
 
     // console.log(eventData)
   }
   deleteContact(eventData:Contact){
     let id=eventData.id
-    this._contactService.deleteContactById(id)
-    console.log("Contact after delete: ", this.contacts)
+    this._contactService.deleteContactById(id).subscribe(data=>{
+      console.log('Record Deleted');
+      this._contactService.getAllContacts().subscribe(data=>this.contacts=data)
 
-    this.filteredContacts=this._contactService.getAllContacts()
+    })
+  
+
   }
 }

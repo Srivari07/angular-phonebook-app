@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditContactComponent } from './components/edit-contact/edit-contact.component';
 import { ContactCounterComponent } from './components/contact-counter/contact-counter.component';
 import { ContactDeleteComponent } from './components/contact-delete/contact-delete.component';
+import {HttpClientModule} from "@angular/common/http"
 
 @NgModule({
   declarations: [
@@ -25,12 +26,10 @@ import { ContactDeleteComponent } from './components/contact-delete/contact-dele
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
-// json-server --port 4300 --watch db/data.json 

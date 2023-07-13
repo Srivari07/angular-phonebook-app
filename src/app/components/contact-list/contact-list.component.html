@@ -1,7 +1,7 @@
-<h3>List of all contact {{filteredContacts.length}}</h3>
-<contact-counter (onRadioChange)="filterContacts($event)" [all]= getAllContactsCount() [male]= getMaleContactsCount() [female]=getFemaleContactsCount()></contact-counter>
+<h3>List of all contact {{contacts.length}}</h3>
+<!-- <contact-counter (onRadioChange)="filterContacts($event)" [all]= getAllContactsCount() [male]= getMaleContactsCount() [female]=getFemaleContactsCount()></contact-counter> -->
 <div class="list-group">
-    <div *ngFor="let c of filteredContacts" class="list-group-item">
+    <div *ngFor="let c of contacts" class="list-group-item">
         <div class="row">
             <div class="col-sm-4">
                 <img src="{{c.picture}}" width="100px" height="150px" style="border-radius:5px;"/>
@@ -13,7 +13,7 @@
                 <p>Gender: {{c.gender}}</p>
                     <button class="btn btn-success">Edit</button>
                     <button class="btn btn-danger" (click)="deleteContact(c)">Delete</button>
-                    <!-- <contact-delete (onDeleteContactById)="deleteContact(c.id)"></contact-delete> -->
+                    <!-- <contact-delete (onDeleteContactById)="deleteContact($event)"></contact-delete> -->
             </div>
     </div>
 </div>
