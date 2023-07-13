@@ -1,59 +1,193 @@
-<div class="container">
+<div>
 
-    <div class="row alert alert-info">
-    
+  <div class="row">
       <div class="col">
-    
-        <h2>Phone Book Application</h2>
-    
-        <p>Powered by Angular</p>
-    
+          <h5> Developed by Srivari</h5>
       </div>
-    
-    </div>
-    
-    <div class="row">
-    
-      <div class="col-sm-4 alert alert-warning" style="height: 500px;">
-    
-        <p>
-    
-          <button class="btn btn-secondary" style="width: 100%;">
-    
-            Home
-    
-          </button>
-    
-        </p>
-    
-        <p>
-    
-          <button class="btn btn-secondary" style="width: 100%;">
-    
-            Add new contact
-    
-          </button>
-    
-        </p>
-    
-        <p>
-    
-          <button class="btn btn-secondary" style="width: 100%;">
-    
-          Contact List
-    
-          </button>
-    
-        </p>
-    
+  </div>
+
+  <div class="row">
+      <div class="col">
+          <img src="{{contact?.picture}}" width="200" height="200"/>
       </div>
-    
-      <div class="col col-sm-8">
-    
-        Working Area
-    
+  </div>
+
+  <div class="row">
+      <div class="col-sm-4">
+
+          ID :
+
       </div>
-    
-    </div>
-    
-    </div>
+
+      <div class="col-sm-8">
+
+          {{contact?.id}}
+
+      </div>
+
+  </div>
+
+  <div class="row">
+
+      <div class="col-sm-4">
+
+          First Name :
+
+      </div>
+
+      <div class="col-sm-8">
+
+          {{contact!.gender | initials}} {{contact?.firstname}}
+
+      </div>
+
+  </div>
+
+  <div class="row">
+
+      <div class="col-sm-4">
+
+          Last Name :
+
+      </div>
+
+      <div class="col-sm-8">
+
+          {{contact?.lastname}}
+
+      </div>
+
+  </div>
+
+  <div class="row">
+
+      <div class="col-sm-4">
+
+          Gender :
+
+      </div>
+
+      <div class="col-sm-8">
+
+          {{contact?.gender}}
+
+      </div>
+
+  </div>
+
+  <div class="row">
+
+      <div class="col-sm-4">
+
+          Date Of Birth :
+
+      </div>
+
+      <div class="col-sm-8">
+
+          {{contact?.dob}}
+
+      </div>
+
+  </div>
+
+  <div class="row">
+
+      <div class="col-sm-4">
+
+          Email Address :
+
+      </div>
+
+      <div class="col-sm-8">
+
+          {{contact?.email}}
+
+      </div>
+
+  </div>
+
+  <div class="row">
+
+      <div class="col-sm-4">
+
+          Phone Number:
+
+      </div>
+
+      <div class="col-sm-8">
+
+          {{contact?.phone}}
+
+      </div>
+
+  </div>
+
+  <div class="row">
+
+      <div class="col-sm-4">
+
+          City :
+
+      </div>
+
+      <div class="col-sm-8">
+
+          {{contact?.city}}
+
+      </div>
+
+  </div>
+
+  <div class="row">
+
+      <div class="col-sm-4">
+
+          State :
+
+      </div>
+
+      <div class="col-sm-8">
+
+          {{contact?.state}}
+
+      </div>
+
+  </div>
+
+  <div class="row">
+
+      <div class="col-sm-4">
+
+          Country :
+
+      </div>
+
+      <div class="col-sm-8">
+
+          {{contact?.country}}
+
+      </div>
+
+  </div>
+
+
+
+
+  <div class="row">
+
+      <div class="col-sm-4">
+
+          <button class="btn btn-success">Edit</button>
+
+      </div>
+
+      <div class="col-sm-8">
+
+          <button class="btn btn-warning">Delete</button>
+
+      </div>
+
+  </div>
+
+</div>

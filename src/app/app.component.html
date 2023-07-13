@@ -8,26 +8,27 @@
 <div class="row">
   <div class="col-sm-4 alert alert-warning" style="height: 500px;">
     <p>
-      <button class="btn btn-secondary" style="width: 100%;">
+      <button [routerLink]="['/home']" class="btn btn-secondary" style="width: 100%;">
         Home
       </button>
     </p>
     <p>
-      <button class="btn btn-secondary" style="width: 100%;">
+      <button [routerLink]="['/add-contact']" class="btn btn-secondary" style="width: 100%;">
         Add new contact
       </button>
     </p>
     <p>
-      <button class="btn btn-secondary" style="width: 100%;">
+      <button [routerLink]="['/contact-list']" class="btn btn-secondary" style="width: 100%;">
       Contact List
       </button>
     </p>
   </div>
   <div class="col col-sm-8">
     <!-- <app-home></app-home> -->
-    <app-contact-list></app-contact-list>
+    <!-- <app-contact-list></app-contact-list> -->
     <!-- <app-add-contact></app-add-contact> -->
     <!-- <edit-contact></edit-contact> -->
+    <router-outlet></router-outlet>
   </div>
 </div>
 </div>

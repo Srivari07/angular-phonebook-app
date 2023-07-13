@@ -10,7 +10,34 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditContactComponent } from './components/edit-contact/edit-contact.component';
 import { ContactCounterComponent } from './components/contact-counter/contact-counter.component';
 import { ContactDeleteComponent } from './components/contact-delete/contact-delete.component';
+
 import {HttpClientModule} from "@angular/common/http"
+import { RouterModule, Routes } from '@angular/router';
+
+
+const routes:Routes=[
+  {
+    path:'home',
+    component:HomeComponent
+  },
+  {
+    path:'contact-list',
+    component:ContactListComponent
+  },
+  {
+    path:'add-contact',
+    component:AddContactComponent
+  },
+  {
+    path:'edit-contact',
+    component:EditContactComponent
+  },
+  {
+    path:'',
+    pathMatch:'full',
+    redirectTo:'home'
+  }
+]
 
 @NgModule({
   declarations: [
@@ -27,7 +54,8 @@ import {HttpClientModule} from "@angular/common/http"
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
