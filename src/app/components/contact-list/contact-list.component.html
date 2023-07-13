@@ -11,7 +11,7 @@
                 <p>{{c.city}} {{c.state}} </p>
                 <p>{{c.phone}}</p>
                 <p>Gender: {{c.gender}}</p>
-                    <button class="btn btn-success">Edit</button>
+                    <button [routerLink]="['/edit-contact',c.id]" class="btn btn-success">Edit</button>
                     <button class="btn btn-danger" (click)="deleteContact(c)">Delete</button>
                     <!-- <contact-delete (onDeleteContactById)="deleteContact($event)"></contact-delete> -->
             </div>
